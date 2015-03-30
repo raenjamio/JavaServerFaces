@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+	 <title>login</title>
+</h:head>
+<h:body style="text-align:center">
+	<div class="container">
+	  <p:growl sticky="true" />
+	 
+	</div>
+	</h:body>
+<script type="text/javascript">
+  //<![CDATA[
+  function manejarLogin(xhr, status, args) {
+    if (!args.validationFailed && args.estaLogeado) {
+      setTimeout(function() {
+        window.location = args.ruta;
+      }, 500);
+    }
+  }
+//]]>
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<f:view>
+	<h:head>
+			<title><ui:define name="title">Planificador</ui:define></title>
+		 	<link href="#{appBean.baseUrl()}resources/css/estilos.css" type="text/css" rel="stylesheet"/>
+			
+			<h:form>  
+			    <p:growl id="messages"/>
+			 
+			    <p:menubar>
+			        <p:submenu label="File" icon="ui-icon-document">
+			            <p:submenu label="New" icon="ui-icon-contact">
+			                <p:menuitem value="Project" url="#" />
+			                <p:menuitem value="Other" url="#" />
+			            </p:submenu>
+			            <p:menuitem value="Open" url="#" />
+			            <p:separator />
+			            <p:menuitem value="Quit" url="#" />
+			        </p:submenu>
+			 
+			        <p:submenu label="Edit" icon="ui-icon-pencil">
+			            <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />
+			            <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+			        </p:submenu>
+			 
+			        <p:menuitem value="Quit" url="http://www.primefaces.org" icon="ui-icon-close" />
+			 		
+			 		 <f:facet name="options">
+			            <p:commandButton type="button" value="Logout" icon="ui-icon-extlink" />
+			        </f:facet>
+			        
+			    </p:menubar>
+			</h:form>
+	
+	</h:head>
+
+	<h:body>
+		<ui:insert class="center_content">Default content</ui:insert>
+	</h:body>
+</f:view>
+</html>
