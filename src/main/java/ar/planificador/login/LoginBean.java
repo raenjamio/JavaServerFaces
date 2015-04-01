@@ -44,6 +44,30 @@ public class LoginBean implements Serializable
         this.password = password;
     }
     
+    public String login() {
+        RequestContext context = RequestContext.getCurrentInstance();
+        FacesMessage msg = null;
+        String ruta="";
+        String estado="";
+        
+        if (name != null && name.equals("admin") && password != null  && password.equals("admin")) {
+        	confirmPassword = true;
+          msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Bienvenid@", name);
+          ruta = MyUtil.basepathlogin();
+          estado = "success";
+        } else {
+        	confirmPassword = false;
+          msg = new FacesMessage(FacesMessage.SEVERITY_WARN, "Login Error", "Credenciales no v�lidas");
+          estado = "false";
+        }
+        FacesContext.getCurrentInstance().addMessage(null, msg);
+        context.addCallbackParam("estaLogeado", confirmPassword);
+        if (confirmPassword) {
+          context.addCallbackParam("ruta", ruta);
+        }
+        return estado;
+    }
+    
     public void login(ActionEvent actionEvent) {
         RequestContext context = RequestContext.getCurrentInstance();
         FacesMessage msg = null;
