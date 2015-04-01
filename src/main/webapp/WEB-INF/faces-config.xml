@@ -34,10 +34,11 @@
 	</managed-bean>
 	<navigation-rule>
 		<display-name>login.xhtml</display-name>
-		<from-view-id>/login.xhtml</from-view-id>
+		<from-view-id>login.xhtml</from-view-id>
 		<navigation-case>
-			<from-outcome>login</from-outcome>
-			<to-view-id>/Paginas/Welcome.xhtml</to-view-id>
+			<from-action>#{loginBean.login}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/Paginas/welcome.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
  
